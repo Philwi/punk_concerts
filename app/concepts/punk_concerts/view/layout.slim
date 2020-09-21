@@ -7,8 +7,9 @@ html
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    title Punk Konzerte in Deutschland
   body
-    //= cell(Chillboarders::Cell::Navigation, nil, current_user: options[:current_user])
+    = cell(PunkConcerts::Cell::Navigation, nil)
     = flash_messages
     #layout_body_wrapper data-controller="application"
       = model

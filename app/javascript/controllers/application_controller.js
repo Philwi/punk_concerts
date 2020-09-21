@@ -1,6 +1,10 @@
 import { Controller } from 'stimulus'
 import StimulusReflex from 'stimulus_reflex'
 
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+
 /* This is your application's ApplicationController.
  * All StimulusReflex controllers should inherit from this class.
  *

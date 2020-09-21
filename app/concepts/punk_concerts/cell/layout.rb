@@ -1,4 +1,4 @@
-module Chillboarders
+module PunkConcerts
   module Cell
     class Layout < Trailblazer::Cell
       include ::Cell::Slim
@@ -7,6 +7,7 @@ module Chillboarders
       include ActionView::Helpers::TranslationHelper
       include ::Cell::Translation
       include ::Webpacker::Helper
+      include ::PunkConcerts::Util::Layout
     end
   end
 end
