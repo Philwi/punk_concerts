@@ -3,7 +3,7 @@ class ShowsController < ApplicationController
 
   def index
     @shows = Show.all.order(:planned_for).limit(10)
-    render html: cell(Shows::Cell::Index, @shows), layout: 'application'
+    render html: cell(Show::Cell::Index, @shows), layout: 'application'
   end
 
   # GET /shows/1

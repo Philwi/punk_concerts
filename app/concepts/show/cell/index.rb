@@ -1,4 +1,4 @@
-module Shows::Cell
+module Show::Cell
   class Index < PunkConcerts::Cell::Layout
     include ::ActionView::Helpers::UrlHelper
     include ::ActionView::Helpers::AssetTagHelper
@@ -10,5 +10,6 @@ module Shows::Cell
     def next_shows
       Show.where('planned_for >= ?', Date.today).limit(3)
     end
+
   end
 end

@@ -358,7 +358,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   bootstrap (~> 5.0.0.alpha1)
   byebug
-  capybara (>= 2.15)
+  capybara
   cells-erb
   cells-rails
   cells-slim
