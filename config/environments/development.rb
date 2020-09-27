@@ -56,7 +56,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  config.i18n.available_locales = [:en, :de]
+  config.i18n.available_locales = [:de, :en]
   config.i18n.default_locale = :de
   config.i18n.locale = :de
 

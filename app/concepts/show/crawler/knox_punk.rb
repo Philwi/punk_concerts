@@ -28,7 +28,7 @@ module Show::Crawler
           source: source,
           title: ''
         }
-        ::Show::Operation::Create.(params: params)
+        ::Show::Operation::Create.(params: params, recaptcha: true)
       rescue => e
         pp "creating spot doesnt work: #{e}"
         next

@@ -22,7 +22,7 @@ class ShowsController < ApplicationController
   end
 
   def create
-    result = Show::Operation::Create.(params: params)
+    result = Show::Operation::Create.(params: params, recaptcha: verify_recaptcha)
     if result.success?
       redirect_to shows_path, notice: 'Show was successfully created.'
     else

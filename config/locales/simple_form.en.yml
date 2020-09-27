@@ -31,4 +31,24 @@ en:
     #     age: 'Select your age'
     placeholders:
       show:
-        city: 'city'
+        city: 'City...'
+        description: 'Description...'
+        flyer: 'Flyer...'
+        location: 'Location...'
+        planned_for: 'Planned for...'
+        postalcode: 'Postalcode...'
+        source: 'Source...'
+        street: 'Street...'
+        title: 'Title...'
+    labels:
+      show:
+        city: 'City'
+        description: 'Description'
+        flyer: 'Flyer'
+        location: 'Location'
+        planned_for: 'Planned for'
+        postalcode: 'Postalcode'
+        source: 'Source'
+        street: 'Street'
+        title: 'Title'
+    

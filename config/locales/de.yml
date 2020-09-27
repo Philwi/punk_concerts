@@ -7,6 +7,7 @@ de:
     errors:
       messages:
         record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'
+        no_image: 'Datei ist kein Bild'
         restrict_dependent_destroy:
           has_one: Datensatz kann nicht gelöscht werden, da ein abhängiger %{record}-Datensatz
             existiert.
@@ -110,6 +111,9 @@ de:
       day: Tag
       month: Monat
       year: Jahr
+  misc:
+    save: Speichern
+    search: Suche
   errors:
     format: "%{attribute} %{message}"
     messages:

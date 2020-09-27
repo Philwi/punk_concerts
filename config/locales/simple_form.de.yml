@@ -1,4 +1,4 @@
-en:
+de:
   simple_form:
     "yes": 'Ja'
     "no": 'Nein'
@@ -29,6 +29,25 @@ en:
     # prompts:
     #   defaults:
     #     age: 'Select your age'
+    labels:
+      show:
+        city: 'Stadt'
+        description: 'Beschreibung'
+        flyer: 'Flyer'
+        location: 'Location'
+        planned_for: 'Datum'
+        postalcode: 'Postleitzahl'
+        source: 'Quelle'
+        street: 'Straße'
+        title: 'Überschrift'
     placeholders:
       show:
-        city: 'Stadt eintragen'
+        city: 'Stadt...'
+        description: 'Welche Bands spielen wann und wo...'
+        flyer: 'Flyer...'
+        location: 'Versanstaltungsort...'
+        planned_for: 'Datum...'
+        postalcode: 'Postleitzahl...'
+        source: 'Quelle...'
+        street: 'Straße...'
+        title: 'Kurze Beschreibung der Veranstaltung...'

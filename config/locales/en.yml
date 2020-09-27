@@ -106,6 +106,9 @@ en:
       day: Day
       month: Month
       year: Year
+  misc:
+    save: Save
+    search: Search
   errors:
     format: "%{attribute} %{message}"
     messages:

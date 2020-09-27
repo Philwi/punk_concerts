@@ -44,8 +44,9 @@ gem "cells-erb"
 gem "slim-rails"
 gem 'material_icons'
 
-gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'bootstrap'
 gem 'jquery-rails'
+gem "recaptcha"
 
 gem 'rails-i18n'
 

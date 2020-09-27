@@ -8,7 +8,7 @@ module Show::Cell
     end
 
     def next_shows
-      Show.where('planned_for >= ?', Date.today).limit(3)
+      Show.upcoming_with_flyer.limit(3)
     end
 
     def params

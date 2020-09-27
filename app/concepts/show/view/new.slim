@@ -8,7 +8,8 @@
       = f.input :postalcode
       = f.input :street
       = f.input :source
-      = f.input :planned_for
+      = f.input :planned_for, as: :date
       = f.input :flyer, as: :file, accept: 'image/*'
+      = recaptcha_tags(theme: :dark)
       center
-        = f.submit 'Speichern', class: 'btn btn-primary btn-lg'
+        = f.submit I18n.t('misc.save'), class: 'btn btn-primary btn-lg'

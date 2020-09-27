@@ -10,9 +10,16 @@ module Show::Contract
     property :street
     property :title, presence: true
 
+    validate do
+      if flyer.present?
+        errors.add(:flyer) << :no_image unless flyer.content_type.match(/image/)
+      end
+    end
+
     validates :title,  length: 5..50
     validates :description,  length: 5..500
     validates :city,  length: 3..50
+
 
     def title=(value)
       if value.present?

@@ -5,6 +5,7 @@ module Show::Cell
     include ::ActionView::Helpers::AssetTagHelper
     include ::ActionView::Helpers::FormOptionsHelper
     include ::ActionView::Helpers::DateHelper
+    include ::Recaptcha::Adapters::ViewMethods
 
   end
 end
