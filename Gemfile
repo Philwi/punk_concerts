@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'friendly_id', '~> 5.4.0'
+gem 'route_translator'
 gem "simple_form"
 # gem "formular", github: "trailblazer/formular"
 gem "dry-validation"

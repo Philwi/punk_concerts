@@ -1,0 +1,4 @@
+en:
+  routes:
+    shows: concerts
+    new: create

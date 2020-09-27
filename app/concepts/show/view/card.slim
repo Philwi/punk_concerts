@@ -1,4 +1,4 @@
-.col-md-8.offset-md-2
+.col-lg-10.col-md-12.offset-lg-1
   .event
     .img
       = image_tag(image(model.flyer))
@@ -12,6 +12,6 @@
         i.material-icons place
         p = model.location
         p = "#{model.postalcode} #{model.city}"
-    .date.float-right
+    .date
       .day = model.planned_for.day
       .month = I18n.t('date.month_names')[model.planned_for.month]

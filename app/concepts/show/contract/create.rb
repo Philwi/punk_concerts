@@ -1,13 +1,18 @@
 module Show::Contract
   class Create < Reform::Form
-    property :title
-    property :description, presence: true
-    property :location
     property :city, presence: true
-    property :postalcode
-    property :street
-    property :source
+    property :description, presence: true
+    property :flyer, virtual: true
+    property :location
     property :planned_for, presence: true
+    property :postalcode
+    property :source
+    property :street
+    property :title, presence: true
+
+    validates :title,  length: 5..50
+    validates :description,  length: 5..500
+    validates :city,  length: 3..50
 
     def title=(value)
       if value.present?

@@ -1,0 +1,14 @@
+#shows
+  .container.new-show
+    = simple_form_for model, as: :show, html: { multipart: true }, url: shows_path, method: :post do |f|
+      = f.input :title
+      = f.input :description
+      = f.input :location
+      = f.input :city
+      = f.input :postalcode
+      = f.input :street
+      = f.input :source
+      = f.input :planned_for
+      = f.input :flyer, as: :file, accept: 'image/*'
+      center
+        = f.submit 'Speichern', class: 'btn btn-primary btn-lg'

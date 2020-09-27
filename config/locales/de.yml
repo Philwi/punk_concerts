@@ -1,6 +1,9 @@
 ---
 de:
   activerecord:
+    attributes:
+      show:
+        city: Stadt
     errors:
       messages:
         record_invalid: 'Gültigkeitsprüfung ist fehlgeschlagen: %{errors}'

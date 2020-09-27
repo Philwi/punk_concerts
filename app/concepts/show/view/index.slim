@@ -10,7 +10,7 @@
               .img-fluid = image_tag(image.flyer)
 
 #shows
-  .container
+  .container.new-show
     = concept(Show::Cell::Search, nil)
     .row
       - shows.each do |show|

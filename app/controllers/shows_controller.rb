@@ -13,26 +13,20 @@ class ShowsController < ApplicationController
 
   # GET /shows/new
   def new
-    @show = Show.new
+    run Show::Operation::Create::Present
+    render html: cell(Show::Cell::New, @form), layout: 'application'
   end
 
   # GET /shows/1/edit
   def edit
   end
 
-  # POST /shows
-  # POST /shows.json
   def create
-    @show = Show.new(show_params)
-
-    respond_to do |format|
-      if @show.save
-        format.html { redirect_to @show, notice: 'Show was successfully created.' }
-        format.json { render :show, status: :created, location: @show }
-      else
-        format.html { render :new }
-        format.json { render json: @show.errors, status: :unprocessable_entity }
-      end
+    result = Show::Operation::Create.(params: params)
+    if result.success?
+      redirect_to shows_path, notice: 'Show was successfully created.'
+    else
+      render html: cell(Show::Cell::New, result[:'contract.default']), layout: 'application'
     end
   end
 
@@ -69,7 +63,7 @@ class ShowsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_show
-      @show = Show.find(params[:id])
+      @show = Show.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
