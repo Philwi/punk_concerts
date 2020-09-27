@@ -1,7 +1,8 @@
 #upcoming-shows.bg-secondary.text-primary
   .container.text-center
     h1 = I18n.t('shows.next_shows')
-    .container
+    .container data-controller="show" data-action="scroll@window->show#scroll"
+      = content_tag(:input, '', class: 'd-none', data: { target: 'show.params' }, value: params)
       .row
         - next_shows.each do |show|
           .col-md-2.offset-md-1

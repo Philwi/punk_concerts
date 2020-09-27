@@ -1,10 +1,6 @@
-form
-  .row
-    .col-md-3
-      input.form-control placeholder=("Stadt") type="text" /
-    .col-md-3
-      input.form-control placeholder=("Band") type="text" /
-    .col-md-3
-      input.form-control placeholder=("Datum") type="text" /
-    .col-md-2
-      button.btn.btn-primary.btn-lg Suche
+#show_search_form
+  = simple_form_for :show, as: :show, url: search_shows_path, method: :get do |f|
+    .col-md-6.offset-md-3
+      center
+        = f.input :city, class: 'form-control-lg', input_html: { class: 'form-control-lg' }
+        = f.submit 'Suche', class: 'btn btn-primary btn-lg'

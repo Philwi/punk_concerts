@@ -2,4 +2,8 @@
 @import "bootstrap";
 @import 'shows';
 @import 'navigation';
-@import 'material_icons'
+@import 'material_icons';
+
+.wait{
+  cursor: wait !important;
+}

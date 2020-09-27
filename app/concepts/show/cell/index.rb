@@ -11,5 +11,9 @@ module Show::Cell
       Show.where('planned_for >= ?', Date.today).limit(3)
     end
 
+    def params
+      options.dig(:params).to_json
+    end
+
   end
 end

@@ -2,8 +2,8 @@ class ShowsController < ApplicationController
   before_action :set_show, only: [:show, :edit, :update, :destroy]
 
   def index
-    @shows = Show.all.order(:planned_for).limit(10)
-    render html: cell(Show::Cell::Index, @shows), layout: 'application'
+    @shows ||= Show.upcoming.limit(10)
+    render html: cell(Show::Cell::Index, @shows, params: params), layout: 'application'
   end
 
   # GET /shows/1
@@ -58,6 +58,12 @@ class ShowsController < ApplicationController
       format.html { redirect_to shows_url, notice: 'Show was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    city = params.dig('show', 'city')
+    @shows ||= Show.upcoming.where("city ILIKE ?", "%#{city}%").limit(10)
+    render html: cell(Show::Cell::Index, @shows, params: params), layout: 'application'
   end
 
   private

@@ -3,3 +3,10 @@
 #mainNav{
   font-family: 'Sedgwick Ave';
 }
+
+.navbar-brand{
+  text-decoration: none;
+  a{
+    color: $secondary !important;
+  }
+}

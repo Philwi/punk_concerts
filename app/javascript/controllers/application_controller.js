@@ -35,19 +35,19 @@ export default class extends Controller {
    *   error - error message from the server
    */
 
-  beforeReflex (element, reflex) {
-    // document.body.classList.add('wait')
-  }
 
   reflexSuccess (element, reflex, error) {
     // show success message etc...
   }
 
-  reflexError (element, reflex, error) {
-    // show error message etc...
+  beforeReflex () {
+    document.body.classList.add('wait')
   }
 
   afterReflex (element, reflex) {
-    // document.body.classList.remove('wait')
+    document.body.classList.remove('wait')
+  }
+  reflexError (element, reflex, error) {
+    // show error message etc...
   }
 }
