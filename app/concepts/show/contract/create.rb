@@ -14,12 +14,12 @@ module Show::Contract
       if flyer.present?
         errors.add(:flyer) << :no_image unless flyer.content_type.match(/image/)
       end
+      errors.add(:description) << :already_saved if Show.find_by(description: description, planned_for: planned_for).present?
     end
 
     validates :title,  length: 5..50
     validates :description,  length: 5..500
     validates :city,  length: 3..50
-
 
     def title=(value)
       if value.present?

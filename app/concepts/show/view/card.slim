@@ -1,5 +1,5 @@
 .col-lg-10.col-md-12.offset-lg-1
-  .event
+  .event = link_to(show_path(model)) do
     .img
       = image_tag(image(model.flyer))
     .desc

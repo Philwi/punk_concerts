@@ -1,6 +1,11 @@
 #show_search_form
   = simple_form_for :show, as: :show, url: search_shows_path, method: :get do |f|
-    .col-md-6.offset-md-3
-      center
-        = f.input :city, class: 'form-control-lg', input_html: { class: 'form-control-lg' }
-        = f.submit I18n.t('misc.search'), class: 'btn btn-primary btn-lg'
+    .container
+      .col-lg-6.offset-lg-3
+        center
+          = f.input :city, input_html: { class: 'form-control-lg' }, label: false
+          .input-group.mb-2
+            = f.input :radius, as: :integer, input_html: { min: 0, max: 1000, class: 'form-control-lg' }, label: false
+            .input-group-append(style="margin-bottom: 1rem;")
+              span.input-group-text = I18n.t('misc.radius')
+          = f.submit I18n.t('misc.search'), class: 'btn btn-primary btn-lg'

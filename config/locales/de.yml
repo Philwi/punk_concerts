@@ -112,6 +112,7 @@ de:
       month: Monat
       year: Jahr
   misc:
+    radius: Radius in km
     save: Speichern
     search: Suche
   errors:

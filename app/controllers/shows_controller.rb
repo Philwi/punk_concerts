@@ -1,5 +1,4 @@
 class ShowsController < ApplicationController
-  before_action :set_show, only: [:show, :edit, :update, :destroy]
 
   def index
     @shows ||= Show.upcoming.limit(10)
@@ -9,6 +8,8 @@ class ShowsController < ApplicationController
   # GET /shows/1
   # GET /shows/1.json
   def show
+    show = Show.friendly.find(params[:id])
+    render html: cell(Show::Cell::Single, show), layout: 'application'
   end
 
   # GET /shows/new
@@ -56,18 +57,8 @@ class ShowsController < ApplicationController
 
   def search
     city = params.dig('show', 'city')
-    @shows ||= Show.upcoming.where("city ILIKE ?", "%#{city}%").limit(10)
+    radius = params.dig('show', 'radius')
+    @shows ||= Show.upcoming.where("city ILIKE ?", "%#{city}%").near(city, radius, units: :km).limit(10)
     render html: cell(Show::Cell::Index, @shows, params: params), layout: 'application'
   end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_show
-      @show = Show.friendly.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-    def show_params
-      params.fetch(:show, {})
-    end
 end

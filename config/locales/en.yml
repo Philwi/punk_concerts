@@ -107,6 +107,7 @@ en:
       month: Month
       year: Year
   misc:
+    radius: Radius in km
     save: Save
     search: Search
   errors:

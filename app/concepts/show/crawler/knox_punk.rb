@@ -21,14 +21,17 @@ module Show::Crawler
         planned_for = tds[2]&.text.strip.to_date
         source = 'https://knox.p-u-n-k.de/'
         params = {
-          description: description,
-          postalcode: postalcode,
-          city: city,
-          planned_for: planned_for,
-          source: source,
-          title: ''
+          'show' => {
+            description: description,
+            postalcode: postalcode,
+            city: city,
+            planned_for: planned_for,
+            source: source,
+            title: ''
+          }
         }
-        ::Show::Operation::Create.(params: params, recaptcha: true)
+        result = ::Show::Operation::Create.(params: params, recaptcha: true)
+        pp "could create new show: #{result.success?}\nerrors: #{result[:'contract.default'].errors.messages}"
       rescue => e
         pp "creating spot doesnt work: #{e}"
         next

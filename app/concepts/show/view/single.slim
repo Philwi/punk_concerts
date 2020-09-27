@@ -1,0 +1,16 @@
+#shows
+  .container.new-show.single-show
+    .row.no-gutters
+      .col-md-4
+        img.card-img = image_tag(image(model.flyer))
+      .col-md-8
+        .card-body
+          h5.card-title = model.title
+          p.card-text = model.description
+          span.icon-with-text
+            i.material-icons event
+            p.card-text = I18n.l(model.planned_for)
+          p.card-text
+          = attributes
+          p.card-text
+          small.text-muted = I18n.l(model.created_at)
