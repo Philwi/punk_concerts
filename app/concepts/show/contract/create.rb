@@ -9,6 +9,8 @@ module Show::Contract
     property :source
     property :street
     property :title, presence: true
+    property :latitude
+    property :longitude
 
     validate do
       if flyer.present?

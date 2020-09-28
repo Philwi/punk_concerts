@@ -18,6 +18,7 @@ class AddLatLngtoShows < ActiveRecord::Migration[6.0]
       next if results.empty?
       latitude, longitude = results.first.coordinates
       show.update(latitude: latitude, longitude: longitude)
+      pp "update geocoordinates: #{show}"
     end
   end
 end

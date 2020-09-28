@@ -3,8 +3,14 @@ class ShowReflex < ApplicationReflex
     params = JSON.parse(params)
     limit = value / 150 + 10
     city = params.dig('show', 'city')
-    radius = params.dig('show', 'radius') || 0
+    radius = params.dig('show', 'radius')
 
-    @shows = Show.upcoming.where("city ILIKE ?", "%#{city}%").near(city, radius, units: :km).limit(10)
+    @shows =
+      if city.blank? && radius.blank?
+        Show.upcoming.limit(limit)
+      else
+        radius = 0 if radius.blank?
+        Show.upcoming.near(city, radius, units: :km).limit(limit)
+      end
   end
 end

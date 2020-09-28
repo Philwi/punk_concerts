@@ -40,6 +40,7 @@ en:
         source: 'Source...'
         street: 'Street...'
         title: 'Title...'
+        radius: 'Max distance to city...'
     labels:
       show:
         city: 'City'

@@ -58,7 +58,13 @@ class ShowsController < ApplicationController
   def search
     city = params.dig('show', 'city')
     radius = params.dig('show', 'radius')
-    @shows ||= Show.upcoming.where("city ILIKE ?", "%#{city}%").near(city, radius, units: :km).limit(10)
+    @shows ||=
+      if city.blank? && radius.blank?
+        Show.upcoming.limit(10)
+      else
+        radius = 0 if radius.blank?
+        Show.upcoming.near(city, radius, units: :km).limit(10)
+      end
     render html: cell(Show::Cell::Index, @shows, params: params), layout: 'application'
   end
 end
