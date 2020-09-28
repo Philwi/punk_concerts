@@ -5,6 +5,7 @@ class Show < ApplicationRecord
   geocoded_by :city
 
   has_one_attached :flyer
+  has_many :comments
 
   scope :upcoming, -> { where('planned_for >= ?', Date.today).order(:planned_for, :id) }
   scope :upcoming_with_flyer, -> { joins(:flyer_attachment).where('planned_for >= ?', Date.today).order(:planned_for, :id) }

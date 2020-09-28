@@ -1,0 +1,10 @@
+#comments
+  .container.new-comment
+    h3 = I18n.t('comments.h3')
+    = simple_form_for model, as: :comment, url: comments_path, method: :post do |f|
+      = f.input :name
+      = f.input :content, as: :text
+      = f.hidden_field :show_model, value: show_model.to_json
+      = recaptcha_tags(theme: :dark)
+      center
+        = f.submit I18n.t('misc.save'), class: 'btn btn-primary btn-lg'

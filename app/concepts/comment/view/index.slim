@@ -1,0 +1,9 @@
+#comments
+  .container.new-comment
+    - if model.present?
+      - model.each do |comment|
+        = concept(::Comment::Cell::Card, comment)
+    - else
+      .row.no-gutters
+        .card-body
+          h5.card-title = I18n.t('comments.empty')

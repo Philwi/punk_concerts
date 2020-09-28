@@ -1,0 +1,17 @@
+@import 'colors';
+
+#comments {
+  font-family: 'Pangolin';
+  background: url("https://cdn.pixabay.com/photo/2017/10/06/18/19/wall-2824068_960_720.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 1em;
+}
+
+.new-comment{
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  box-shadow: $secondary 4px 0px 13px;
+  padding: 2em;
+}

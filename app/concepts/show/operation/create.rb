@@ -8,17 +8,17 @@ module Show::Operation
 
     step Subprocess(Present)
     step Contract::Validate(key: 'show')
-    pass :check_recaptcha
+    step :check_recaptcha
     step :modify_planned_for
     step :assign_geocoordinates
     step Contract::Persist()
     step :attach_image
 
     def check_recaptcha(ctx, recaptcha:, **)
-      #unless recaptcha
-      #  ctx[:'contract.default'].errors.messages.merge! 'g-recaptcha-response' => :invalid
-      #  return false
-      #end
+      unless recaptcha
+        ctx[:'contract.default'].errors.messages.merge! 'g-recaptcha-response' => :invalid
+        return false
+      end
       true
     end
 
