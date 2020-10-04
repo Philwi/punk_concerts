@@ -12,4 +12,14 @@
 .img-thumbnail{
   background-color: $primary;
   border: none;
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
+}
+
+body{
+  background: url("background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }

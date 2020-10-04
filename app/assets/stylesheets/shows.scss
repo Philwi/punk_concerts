@@ -16,20 +16,12 @@
 #shows {
   font-family: 'Pangolin';
   padding-top: 1em;
-  background: url("https://cdn.pixabay.com/photo/2017/10/06/18/19/wall-2824068_960_720.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   min-height: 100vh;
 }
 
 #show {
   font-family: 'Pangolin';
   padding-top: 1em;
-  background: url("https://cdn.pixabay.com/photo/2017/10/06/18/19/wall-2824068_960_720.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 .new-show{
@@ -114,13 +106,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 21em;
+    max-width: 19em;
   }
   p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 38em;
+    max-width: 34em;
   }
 }
 

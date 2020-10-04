@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  root to: 'shows#index'
+
   localized do
     scope "/:locale" do
+      devise_for :admin_users, ActiveAdmin::Devise.config
+      ActiveAdmin.routes(self)
       resources :shows do
         collection do
           get 'search'

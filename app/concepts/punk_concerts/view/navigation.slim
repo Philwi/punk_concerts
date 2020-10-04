@@ -1,13 +1,10 @@
-nav#mainNav.navbar.navbar-expand-lg.bg-primary.navbar-light.fixed-top
+nav#mainNav.navbar.navbar-expand-lg.bg-primary.navbar-light
   .container
     = link_to('Punkkonzerte', root_path, class: 'navbar-brand')
     button.navbar-toggler aria-controls="navbarResponsive" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarResponsive" data-toggle="collapse" type="button"
       span.navbar-toggler-icon
     #navbarResponsive.collapse.navbar-collapse
       ul.navbar-nav.ml-auto
-        li.nav-item
-          = link_to('Konzerte', root_path, class: 'nav-link')
-        li.nav-item
-          = link_to('Neues Konzert anlegen', new_show_path, class: 'nav-link')
+        = navigation_links
         li.nav-item
           = switch_locale

@@ -24,8 +24,10 @@ class ShowsController < ApplicationController
 
   def create
     result = Show::Operation::Create.(params: params, recaptcha: verify_recaptcha)
+    flash = Show::Operation::Create::Flash.(result)
+
     if result.success?
-      redirect_to shows_path, notice: 'Show was successfully created.'
+      redirect_to shows_path
     else
       render html: cell(Show::Cell::New, result[:'contract.default']), layout: 'application'
     end
@@ -58,13 +60,7 @@ class ShowsController < ApplicationController
   def search
     city = params.dig('show', 'city')
     radius = params.dig('show', 'radius')
-    @shows ||=
-      if city.blank? && radius.blank?
-        Show.upcoming.limit(10)
-      else
-        radius = 0 if radius.blank?
-        Show.upcoming.near(city, radius, units: :km).limit(10)
-      end
+    @shows ||= ::Show::Util::Helper.search_shows(city: city, radius: radius)
     render html: cell(Show::Cell::Index, @shows, params: params), layout: 'application'
   end
 end

@@ -6,8 +6,8 @@ module Comment::Operation
     end
 
     step Subprocess(Present)
-    step Contract::Validate(key: 'comment')
     step :assign_show
+    step Contract::Validate(key: 'comment')
     step :check_recaptcha
     step Contract::Persist()
 

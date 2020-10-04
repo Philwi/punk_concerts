@@ -41,6 +41,9 @@ en:
         street: 'Street...'
         title: 'Title...'
         radius: 'Max distance to city...'
+      comment:
+        content: Content
+        name: Name
     labels:
       show:
         city: 'City'

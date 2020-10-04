@@ -40,6 +40,9 @@ de:
         source: 'Quelle'
         street: 'Straße'
         title: 'Überschrift'
+      comment:
+        content: Inhalt
+        name: Name
     placeholders:
       show:
         city: 'Stadt...'

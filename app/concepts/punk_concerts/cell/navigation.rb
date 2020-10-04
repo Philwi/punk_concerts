@@ -5,6 +5,20 @@ module PunkConcerts::Cell
       { language: 'English', locale: 'en', flag: 'flags/england.svg' },
     ].freeze
 
+    NAVIGATION_LINKS = [
+      { text: I18n.t('navigation.all_concerts'), path: :root },
+      { text: I18n.t('navigation.new_concert'), path: :new_show },
+      { text: I18n.t('navigation.contact'), path: :contact },
+    ]
+
+    def navigation_links
+      NAVIGATION_LINKS.map do |link|
+        content_tag(:li, class: 'nav-item') do
+          link_to(link[:text], link[:path], class: 'nav-link')
+        end
+      end.join
+    end
+
     def switch_locale
       actual_locale_data = LANGUAGES.find { |language| language[:locale] == I18n.locale.to_s }
       content_tag(:div, class: 'locale-switcher') do

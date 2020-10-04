@@ -114,6 +114,9 @@ de:
       day: Tag
       month: Monat
       year: Jahr
+  flash:
+    show_created: Die Show wurde angelegt und muss noch freigeschalten werden!
+    show_not_created: Die Show konnte nicht angelegt werden. Bitte überprüfe die rot markierten Eingabefelder.
   misc:
     radius: Radius in km
     save: Speichern
@@ -220,6 +223,9 @@ de:
     precision:
       format:
         delimiter: ''
+  navigation:
+    all_concerts: Konzerte
+    new_concert: Neues Konzert anlegen
   shows:
     next_shows: 'Die nächsten Konzerte'
   support:

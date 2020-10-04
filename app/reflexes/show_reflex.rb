@@ -5,12 +5,6 @@ class ShowReflex < ApplicationReflex
     city = params.dig('show', 'city')
     radius = params.dig('show', 'radius')
 
-    @shows =
-      if city.blank? && radius.blank?
-        Show.upcoming.limit(limit)
-      else
-        radius = 0 if radius.blank?
-        Show.upcoming.near(city, radius, units: :km).limit(limit)
-      end
+    @shows = ::Show::Util::Helper.search_shows(city: city, radius: radius, limit: limit)
   end
 end

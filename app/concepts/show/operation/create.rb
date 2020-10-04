@@ -1,6 +1,16 @@
 module Show::Operation
   class Create < Trailblazer::Operation
 
+    class Flash
+      def self.call(result)
+        if result.success?
+          { notice: I18n.t('flash.show_created') }
+        elsif result[:error].present?
+          { alert: I18n.t('flash.show_not_created') }
+        end
+      end
+    end
+
     class Present < Trailblazer::Operation
       step Model( Show, :new )
       step Contract::Build(constant: ::Show::Contract::Create)
