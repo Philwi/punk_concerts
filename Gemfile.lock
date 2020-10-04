@@ -59,6 +59,9 @@ GEM
     activejob (6.0.3.3)
       activesupport (= 6.0.3.3)
       globalid (>= 0.3.6)
+    activejob-retry (0.6.3)
+      activejob (>= 4.2)
+      activesupport (>= 4.2)
     activemodel (6.0.3.3)
       activesupport (= 6.0.3.3)
     activemodel-serializers-xml (1.0.2)
@@ -129,6 +132,11 @@ GEM
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
+    delayed_job (4.1.8)
+      activesupport (>= 3.0, < 6.1)
+    delayed_job_active_record (4.1.4)
+      activerecord (>= 3.0, < 6.1)
+      delayed_job (>= 3.0, < 5)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -188,6 +196,8 @@ GEM
     erbse (0.1.4)
       temple
     erubi (1.9.0)
+    et-orbi (1.2.4)
+      tzinfo
     execjs (2.7.0)
     ffi (1.13.1)
     formtastic (3.1.5)
@@ -195,6 +205,9 @@ GEM
     formtastic_i18n (0.6.0)
     friendly_id (5.4.0)
       activerecord (>= 4.0.0)
+    fugit (1.3.6)
+      et-orbi (~> 1.1, >= 1.1.8)
+      raabro (~> 1.3)
     geocoder (1.6.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -265,6 +278,7 @@ GEM
       nio4r (~> 2.0)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
+    raabro (1.3.1)
     rack (2.2.3)
     rack-proxy (0.6.5)
       rack
@@ -334,6 +348,8 @@ GEM
       addressable (~> 2.7)
     ruby2_keywords (0.0.2)
     rubyzip (2.3.0)
+    rufus-scheduler (3.6.0)
+      fugit (~> 1.1, >= 1.1.6)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -443,6 +459,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activejob-retry
   bootsnap (>= 1.4.2)
   bootstrap
   byebug
@@ -451,6 +468,7 @@ DEPENDENCIES
   cells-erb
   cells-rails
   cells-slim
+  delayed_job_active_record
   devise
   draper
   dry-validation
@@ -470,6 +488,7 @@ DEPENDENCIES
   recaptcha
   reform-rails
   route_translator
+  rufus-scheduler
   sass-rails (>= 6)
   selenium-webdriver
   simple_form
