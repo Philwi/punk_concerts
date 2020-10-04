@@ -110,12 +110,15 @@ en:
       month: Month
       year: Year
   flash:
+    contact_created: Your message was successfully created!
+    contact_not_created: Your message could not be created. Look at the input fields!
     show_created: The show was created and have to be approved by the site owner!
     show_not_created: The show could not be created. Look at the input fields!
   misc:
     radius: Radius in km
     save: Save
     search: Search
+    send: Send
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -164,6 +167,7 @@ en:
       update: Update %{model}
   navigation:
     all_concerts: Concerts
+    contact: Contact
     new_concert: Create a new concert
   number:
     currency:

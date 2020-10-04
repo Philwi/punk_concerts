@@ -15,6 +15,9 @@ de:
   comments:
     h3: Kommentar erstellen
     empty: Es wurden noch keine Kommentare erstellt...
+  contact:
+    strong: Punkshows für alle!
+    p: Wenn du Probleme bei der Nutzung dieser Seite hast oder dich anderweitig mitteilen möchtest, schreibe mir ruhig eine Nachricht.
   date:
     abbr_day_names:
     - So
@@ -115,12 +118,15 @@ de:
       month: Monat
       year: Jahr
   flash:
+    contact_created: Deine Nachricht wurde übermittelt!
+    contact_not_created: Deine Nachricht konnte nicht abgeschickt werden. Bitte überprüfe die rot markierten Eingabefelder.
     show_created: Die Show wurde angelegt und muss noch freigeschalten werden!
     show_not_created: Die Show konnte nicht angelegt werden. Bitte überprüfe die rot markierten Eingabefelder.
   misc:
     radius: Radius in km
     save: Speichern
     search: Suche
+    send: Abschicken
   errors:
     format: "%{attribute} %{message}"
     messages:
@@ -225,6 +231,7 @@ de:
         delimiter: ''
   navigation:
     all_concerts: Konzerte
+    contact: Kontakt
     new_concert: Neues Konzert anlegen
   shows:
     next_shows: 'Die nächsten Konzerte'

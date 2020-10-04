@@ -8,7 +8,7 @@ module PunkConcerts::Cell
     NAVIGATION_LINKS = [
       { text: I18n.t('navigation.all_concerts'), path: :root },
       { text: I18n.t('navigation.new_concert'), path: :new_show },
-      { text: I18n.t('navigation.contact'), path: :contact },
+      { text: I18n.t('navigation.contact'), path: :new_contact },
     ]
 
     def navigation_links

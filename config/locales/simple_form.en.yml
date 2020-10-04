@@ -44,6 +44,11 @@ en:
       comment:
         content: Content
         name: Name
+      contact:
+        content: Message
+        email: E-Mail
+        name: Name
+        subject: Subject
     labels:
       show:
         city: 'City'

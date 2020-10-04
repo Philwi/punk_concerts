@@ -43,6 +43,11 @@ de:
       comment:
         content: Inhalt
         name: Name
+      contact:
+        content: Nachricht
+        email: E-Mail
+        name: Name
+        subject: Betreff
     placeholders:
       show:
         city: 'Stadt...'

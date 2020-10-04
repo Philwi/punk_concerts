@@ -1,0 +1,18 @@
+#show
+  .container.new-show.single-show
+    .row.no-gutters
+      .col-md-4
+        img.card-img = image_tag('profil.jpg')
+        strong = I18n.t('contact.strong')
+        p = I18n.t('contact.p')
+        p TODO: hier noch Spendenbutton hin
+      .col-md-8
+        .card-body
+          = simple_form_for model, as: :contact, url: contacts_path, method: :post do |f|
+            = f.input :name
+            = f.input :email
+            = f.input :subject
+            = f.input :content, as: :text
+            = recaptcha_tags(theme: :dark)
+            center
+              = f.submit I18n.t('misc.send'), class: 'btn btn-primary btn-lg'
