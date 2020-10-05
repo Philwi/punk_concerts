@@ -23,7 +23,7 @@ module PunkConcerts::Cell
       actual_locale_data = LANGUAGES.find { |language| language[:locale] == I18n.locale.to_s }
       content_tag(:div, class: 'locale-switcher') do
         out =''
-        out.concat(content_tag(:button, class: 'btn btn-light', data: { toggle: 'dropdown' }) do
+        out.concat(content_tag(:button, class: 'btn btn-primary', data: { toggle: 'dropdown' }) do
           inner = ''
           inner.concat image_tag(actual_locale_data[:flag], width: '15', height: '15')
           inner.concat content_tag(:span, actual_locale_data[:locale].upcase, class: 'country-flag')

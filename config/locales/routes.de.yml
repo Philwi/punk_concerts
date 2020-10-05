@@ -1,4 +1,6 @@
 de:
   routes:
     shows: konzerte 
+    comments: kommentare
+    contacts: kontakt
     new: erstellen

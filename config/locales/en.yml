@@ -10,6 +10,9 @@ en:
   comments:
     h3: Create Comment
     empty: No comments created yet...
+  contact:
+    strong: Punkshows for all!
+    p: If you have any trouble using this site or any other issues please let me know!
   date:
     abbr_day_names:
     - Sun
