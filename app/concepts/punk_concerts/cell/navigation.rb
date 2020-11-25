@@ -1,5 +1,8 @@
 module PunkConcerts::Cell
   class Navigation < Trailblazer::Cell
+    include ActionView::Helpers::TranslationHelper
+    include Cell::Translation
+
     LANGUAGES = [
       { language: 'Deutsch', locale: 'de', flag: 'flags/germany.svg' },
       { language: 'English', locale: 'en', flag: 'flags/england.svg' },

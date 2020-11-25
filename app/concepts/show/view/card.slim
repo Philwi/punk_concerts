@@ -1,17 +1,20 @@
-.col-lg-10.col-md-12.offset-lg-1
-  .event = link_to(show_path(model)) do
-    .img
-      = image_tag(image(model.flyer))
-    .desc
-      h3 = model.title
-      span.icon-with-text
-        i.material-icons volume_up
-        p = model.description
-      br
-      span.icon-with-text
-        i.material-icons place
-        p = model.location
-        p = "#{model.postalcode} #{model.city}"
-    .date
-      .day = model.planned_for.day
-      .month = I18n.t('date.month_names')[model.planned_for.month]
+.card.event-card
+  = link_to(show_path(model)) do
+    .container
+      .row
+        .col-sm-3
+          = image_tag(image(model.flyer))
+        .col-sm-7
+          h3 = model.title
+          span.icon-with-text
+            i.material-icons volume_up
+            p = model.description
+          br
+          span.icon-with-text
+            i.material-icons place
+            p = model.location
+            p = "#{model.postalcode} #{model.city}"
+        .col-sm-2
+          .date
+            .day = model.planned_for.day
+            .month = I18n.t('date.month_names')[model.planned_for.month]
