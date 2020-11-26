@@ -85,5 +85,5 @@ test:
 production:
   <<: *default
   database: punk_concerts_production
-  username: punk_concerts
-  password: <%= ENV['PUNK_CONCERTS_DATABASE_PASSWORD'] %>
+  username: <%= ENV['POSTGRES_USER'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
