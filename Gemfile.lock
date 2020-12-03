@@ -350,8 +350,6 @@ GEM
     rubyzip (2.3.0)
     rufus-scheduler (3.6.0)
       fugit (~> 1.1, >= 1.1.6)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -489,7 +487,7 @@ DEPENDENCIES
   reform-rails
   route_translator
   rufus-scheduler
-  sass-rails (>= 6)
+  sassc-rails
   selenium-webdriver
   simple_form
   slim-rails
@@ -506,7 +504,7 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.7.2p137
 
 BUNDLED WITH
    2.1.4

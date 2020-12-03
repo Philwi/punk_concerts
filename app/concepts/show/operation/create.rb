@@ -18,6 +18,7 @@ module Show::Operation
 
     step Subprocess(Present)
     step Contract::Validate(key: 'show')
+    
     step :check_recaptcha
     step :modify_planned_for
     step :assign_geocoordinates
@@ -25,7 +26,7 @@ module Show::Operation
     step :attach_image
 
     def check_recaptcha(ctx, recaptcha:, **)
-      unless recaptcha
+      if !recaptcha && Rails.env == 'production'
         ctx[:'contract.default'].errors.messages.merge! 'g-recaptcha-response' => :invalid
         return false
       end

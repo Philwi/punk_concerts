@@ -12,13 +12,16 @@ RUN apt-get update -y
 
 # Install Yarn
 RUN apt-get install yarn -y
+RUN apt-get install bash -y
+RUN apt-get install vim -y
 
 ADD . /usr/src/app
 WORKDIR /usr/src/app
 
 # Install & run bundler
 RUN gem install bundler:'~> 2.1.4'
+RUN gem install rake
 
-RUN bundle
+RUN bundle install --path=vendor/cache
 
 CMD ./docker-entrypoint.sh

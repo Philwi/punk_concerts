@@ -17,7 +17,7 @@ module Comment::Operation
     end
 
     def check_recaptcha(ctx, recaptcha:, **)
-      unless recaptcha
+      if !recaptcha && Rails.env == 'production'
         ctx[:'contract.default'].errors.messages.merge! 'g-recaptcha-response' => :invalid
         return false
       end

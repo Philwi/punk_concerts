@@ -1,5 +1,7 @@
 module Show::Contract
   class Create < Reform::Form
+    include ::Reform::Form::ActiveModel::ModelReflections
+
     property :city, presence: true
     property :description, presence: true
     property :flyer, virtual: true
