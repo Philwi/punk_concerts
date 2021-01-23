@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'shows#index'
 
+  mount ActionCable.server => '/cable'
+
   localized do
     scope "/:locale" do
       devise_for :admin_users, ActiveAdmin::Devise.config

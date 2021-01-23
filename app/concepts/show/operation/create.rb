@@ -39,7 +39,8 @@ module Show::Operation
         month = params.dig('show', 'planned_for(2i)').to_i
         day = params.dig('show', 'planned_for(3i)').to_i
         ctx[:'contract.default'].planned_for = Date.new(year, month, day)
-      end
+      end 
+      true
     end
 
     def assign_geocoordinates(ctx, **)
@@ -52,6 +53,7 @@ module Show::Operation
       latitude, longitude = results.first.coordinates
       ctx[:'contract.default'].latitude = latitude
       ctx[:'contract.default'].longitude = longitude
+      true
     end
 
     def attach_image(ctx, model:, params:, **)

@@ -484,6 +484,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.2)
   rails-i18n
   recaptcha
+  redis (~> 4.0)
   reform-rails
   route_translator
   rufus-scheduler
