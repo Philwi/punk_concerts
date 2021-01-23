@@ -9,9 +9,9 @@ module Show::Crawler
       options.add_argument("--headless")
       options.add_argument("--disable-dev-shm-usage")
       options.add_argument("--no-sandbox")
-      @driver = Selenium::WebDriver.for :selenium_chrome_headless, options: options
+      #@driver = Selenium::WebDriver.for :selenium_webdriver, options: options
       Capybara.run_server = false
-      Capybara.current_driver = @driver
+      Capybara.current_driver = :selenium_chrome_headless
       Capybara.app_host = url
     end
   end
