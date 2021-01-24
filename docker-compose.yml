@@ -23,7 +23,8 @@ services:
       RACK_ENV: ${STAGE}
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      WEBPACKER_DEV_SERVER_HOST: webpack
+      WEBPACKER_DEV_SERVER_HOST: webpack 
+      REDISTOGO_URL: ${REDISTOGO_URL}
     volumes:
       - .:/usr/src/app
     depends_on:

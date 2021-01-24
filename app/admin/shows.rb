@@ -5,7 +5,7 @@ ActiveAdmin.register Show do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :title, :description, :location, :city, :postalcode, :street, :source, :planned_for, :slug, :longitude, :latitude, :active
+  permit_params :title, :description, :location, :city, :postalcode, :street, :source, :planned_for, :slug, :longitude, :latitude, :active
   #
   # or
   #
