@@ -1,3 +1,5 @@
+require "cell/translation"
+
 module PunkConcerts::Cell
   class Navigation < Trailblazer::Cell
     include ActionView::Helpers::TranslationHelper
@@ -9,15 +11,15 @@ module PunkConcerts::Cell
     ].freeze
 
     NAVIGATION_LINKS = [
-      { text: I18n.t('navigation.all_concerts'), path: :root },
-      { text: I18n.t('navigation.new_concert'), path: :new_show },
-      { text: I18n.t('navigation.contact'), path: :new_contact },
+      { text: '.navigation.all_concerts', path: :root },
+      { text: '.navigation.new_concert', path: :new_show },
+      { text: '.navigation.contact', path: :new_contact },
     ]
 
     def navigation_links
       NAVIGATION_LINKS.map do |link|
         content_tag(:li, class: 'nav-item') do
-          link_to(link[:text], link[:path], class: 'nav-link')
+          link_to(I18n.t(link[:text]), link[:path], class: 'nav-link')
         end
       end.join
     end
